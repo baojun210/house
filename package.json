@@ -1,0 +1,22 @@
+{
+  "name": "house",
+  "version": "0.0.1",
+  "description": "a house",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baojun210/house.git"
+  },
+  "keywords": [
+    "house"
+  ],
+  "author": "baojun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baojun210/house/issues"
+  },
+  "homepage": "https://github.com/baojun210/house#readme"
+}
