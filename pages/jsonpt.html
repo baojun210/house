@@ -1,0 +1,74 @@
+var ajax = function(){
+	var id = 0,
+		body = document.body;
+	return function(options){
+		id++;
+		function serialize(obj){
+			var result = [],
+				a;
+			for(a in obj){
+				result.push([a, "=", obj[a]].join(""));
+			}
+			return result.join("&");
+		}
+		var jsonp = options.jsonp,
+			url = options.url,
+			data = options.data,
+			dataType = options.dataType || "json",
+			success = (options.success || function(){}).bind(options),
+			error = (options.error || function(){}).bind(options);
+		if(jsonp){
+			var script = document.createElement("script"),
+				data = serialize(data);
+			script.src = [url, "?type=jsonp&id=", id, [["&", data].join(""), ""][+!data.length]].join("");
+			window[["jsonpCallback_", id].join("")] = [
+				success,
+				function(data){
+					success(eval("(" + data + ")"));
+				}
+			][+(dataType === "json")];
+			body.appendChild(script);
+			return;
+		}
+		var xhr = new XMLHttpRequest,
+			type = options.type || "get",
+			headers = options.headers || {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			a;
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState === 4){
+				if(xhr.status >= 200 && xhr.status < 300){
+					success(dataType === "json" ? eval("("+ xhr.responseText + ")") : xhr.responseText);
+				}else{
+					error(xhr.responseText);
+				}
+			}
+		};
+		xhr.open(type, [url, "?", ["", serialize(data)][+(type === "get")]].join(""), options.async || 1);
+		for(a in headers){
+			xhr.setRequestHeader(a, headers[a]);
+		}
+		xhr.send([serialize(data), null][+(type === "get")]);
+	};
+}();
+ajax({
+	type: "get",// optional
+	url: "http://127.0.0.1:23333/api/get_banner/home",
+	headers: {
+		"Content-Type": "application/x-www-form-urlencoded"
+	},// optional
+	async: 1,// optional
+	data: {
+		a: 1,
+		b: 2
+	},// optional
+	dataType: "text",// optional
+	jsonp: 1,// optional
+	success: function(data){
+		console.log(data);
+	},// optional
+	error: function(err){
+		console.log(err);
+	}// optional
+});
