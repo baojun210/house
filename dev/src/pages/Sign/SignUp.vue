@@ -1,8 +1,29 @@
+<style lang="stylus" scoped>
+	$orange=#ff6932
+	input
+		width 100%
+		height 2.6875rem
+		border none
+		&:first-of-type
+			border-bottom 1px solid #ddd
+			margin-top 1.1875rem
+	a
+		display block
+		margin 2.3125rem auto 1.1875rem
+		width 18.75rem
+		height 2.4375rem
+		font-size 1rem
+		color rgb(243,243,243)
+		line-height @height
+		text-align center
+		border-radius 4px
+		background-color rgb(199,199,199)
+</style>
 <template>
 	<div>
 		<my-header hasBack="1" title="注册" />
-		<input v-model="user" placeholder="用户名" />
-		<input type="password" v-model="password" placeholder="密码" />
+		<input v-model="user" placeholder="请输入用户名"  />
+		<input type="password" v-model="password" placeholder="请输入密码"/>
 		<a @click="signUp">注册</a>
 		<modal ref="modal" type="fixed" />
 	</div>

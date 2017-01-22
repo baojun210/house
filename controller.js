@@ -70,7 +70,7 @@ router
 				{
 					id: "1234124",
 					href: "#",
-					title: "东方金融中心1",
+					title: "东方金融中心",
 					url: "/images/house/1.png",
 					price: "7",
 					commission: "1"
@@ -78,7 +78,7 @@ router
 				{
 					id: "1234128",
 					href: "#",
-					title: "东方金融中心2",
+					title: "陆家嘴",
 					url: "/images/house/1.png",
 					price: "3",
 					commission: "5"
@@ -86,7 +86,7 @@ router
 				{
 					id: "1234129",
 					href: "#",
-					title: "东方金融中心3",
+					title: "徐家汇国际金融中心",
 					url: "/images/house/1.png",
 					price: "5",
 					commission: "2"

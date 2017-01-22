@@ -1,3 +1,29 @@
+<style lang="stylus" scoped>
+	$orange=#ff6932
+	input
+		width 100%
+		height 2.6875rem
+		border none
+		&:first-of-type
+			border-bottom 1px solid #ddd
+			margin-top 1.1875rem
+	a
+		&:first-of-type
+			display block
+			margin 2.3125rem auto 1.1875rem
+			width 18.75rem
+			height 2.4375rem
+			font-size 1rem
+			color rgb(243,243,243)
+			line-height @height
+			text-align center
+			border-radius 4px
+			background-color rgb(199,199,199)
+		&:last-of-type
+			color $orange
+			font-size .75rem
+			margin-left 1.25rem
+</style>
 <template>
 	<div>
 		<my-header hasBack="1" title="登录" />
