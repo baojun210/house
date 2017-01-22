@@ -1,4 +1,5 @@
 <style lang="stylus" scoped>
+	$orange=#ff6932
 	header
 		position relative
 		height 2.25rem
@@ -14,7 +15,7 @@
 			left .5rem
 	span
 		font-size 1rem
-		color #333
+		color $orange
 </style>
 <template>
 	<header>
