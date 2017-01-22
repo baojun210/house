@@ -15,43 +15,55 @@
 	h1
 		font-size 1rem
 		color #333
-	span
-		&:first-of-type
-			b
-				font-size .875rem
-				color $orange
-				&:before
-					content "¥"
-					font-size .75rem
+		padding-bottom .375rem
+	a
+		font-size .75rem
+		color $orange
+		border 1px solid $orange
+		border-radius 4px
+		padding .15625rem .3125rem
+	p
+		padding-top .375rem
+		span
+			&:first-of-type
+				b
+					font-size .875rem
 					color $orange
-			em
+					&:before
+						content "¥"
+						font-size .75rem
+						color $orange
+				em
+					font-size .75rem
+					color #666
+			&:last-of-type
 				font-size .75rem
 				color #666
-		&:last-of-type
-			font-size .75rem
-			color #666
-	.icon
-		position absolute
-		top 1rem
-		right 1.125rem
-		width 1rem
-		height 1rem
-		color #bbb
-		&.current
-			color $orange
+		.icon
+			position absolute
+			top 1rem
+			right 1.125rem
+			width 1rem
+			height 1rem
+			color #bbb
+			&.current
+				color $orange
 </style>
 <template>
 	<ul>
 		<li v-for="item of data" :style="`background-image:url(${item.url})`" @click="showDetails(item.href)">
 			<h1>{{item.title}}</h1>
-			<span>
-				<b>{{item.price}}</b>
-				<em>元／平米／天起</em>
-			</span>
-			<span>{{`${item.commission}个月`}}</span>
-			<svg class="icon" aria-hidden="true" @click.stop="addFavorite(item.id,$event)">
-				<use xlink:href="#icon-favorites"></use>
-			</svg>
+			<a>{{item.type}}</a>
+			<p>
+				<span>
+					<b>{{item.price}}</b>
+					<em>元／平米／天起</em>
+				</span>
+				<span>{{`${item.commission}个月`}}</span>
+				<svg class="icon" aria-hidden="true" @click.stop="addFavorite(item.id,$event)">
+					<use xlink:href="#icon-favorites"></use>
+				</svg>
+			</p>
 		</li>
 	</ul>
 </template>

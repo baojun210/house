@@ -41,7 +41,7 @@
 <template>
 	<div class="searchBar">
 		<div class="area">
-			<b>上海</b>
+			<b>杭州</b>
 			<svg class="icon more" aria-hidden="true">
 				<use xlink:href="#icon-more"></use>
 			</svg>
@@ -50,7 +50,7 @@
 			<svg class="icon search" aria-hidden="true">
 				<use xlink:href="#icon-search"></use>
 			</svg>
-			<span>挑好房，上房</span>
+			<span>找好房，来这里</span>
 		</div>
 	</div>
 </template>

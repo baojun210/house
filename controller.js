@@ -70,7 +70,8 @@ router
 				{
 					id: "1234124",
 					href: "#",
-					title: "东方金融中心",
+					type : "商务中心",
+					title: "阳光城丽兹公馆",
 					url: "/images/house/1.png",
 					price: "7",
 					commission: "1"
@@ -78,16 +79,18 @@ router
 				{
 					id: "1234128",
 					href: "#",
-					title: "陆家嘴",
-					url: "/images/house/1.png",
+					type : "创意产业园",
+					title: "绿城九龙仓钱塘明月",
+					url: "/images/house/2.png",
 					price: "3",
 					commission: "5"
 				},
 				{
 					id: "1234129",
 					href: "#",
-					title: "徐家汇国际金融中心",
-					url: "/images/house/1.png",
+					type : "写字楼",
+					title: "红景凯丽晶座",
+					url: "/images/house/3.png",
 					price: "5",
 					commission: "2"
 				}
