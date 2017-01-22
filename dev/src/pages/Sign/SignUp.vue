@@ -1,12 +1,23 @@
 <style lang="stylus" scoped>
 	$orange=#ff6932
-	input
+	.bg
 		width 100%
-		height 2.6875rem
-		border none
-		&:first-of-type
+		background-color white
+		p
+			width 18.75rem
+			margin 0 auto
+			background-color white
 			border-bottom 1px solid #ddd
-			margin-top 1.1875rem
+			&:first-of-type
+				margin-top 1.1875rem
+			span
+				font-size 1rem
+				padding-bottom .875rem
+			input
+				width 13.375rem
+				height 2.625rem
+				border none
+				padding 1rem 0	
 	a
 		display block
 		margin 2.3125rem auto 1.1875rem
@@ -22,8 +33,22 @@
 <template>
 	<div>
 		<my-header hasBack="1" title="注册" />
-		<input v-model="user" placeholder="请输入用户名"  />
-		<input type="password" v-model="password" placeholder="请输入密码"/>
+		<div class="bg">
+			<p>
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-bussinessman"></use>
+				</svg>
+				<span>账号：</span>
+				<input v-model="user" placeholder="请输入用户名"  />
+			</p>
+			<p>
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-yingckjian"></use>
+				</svg>
+				<span>密码：</span>
+				<input type="password" v-model="password" placeholder="请输入密码"/>
+			</p>
+		</div>
 		<a @click="signUp">注册</a>
 		<modal ref="modal" type="fixed" />
 	</div>
